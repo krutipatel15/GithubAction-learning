@@ -1,5 +1,5 @@
 name: first-workflow
-on: [workflow_dispatch, push]
+on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -8,5 +8,3 @@ jobs:
         run: |
           echo "hello!"
           echo "hi!"
-      - name: goodbye-greet
-        run: echo "bye-bye!"
