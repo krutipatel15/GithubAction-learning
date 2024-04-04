@@ -15,5 +15,5 @@ jobs:
         run: |
           echo "hello!"
       - name: functions
-        if: failure() && steps.firstjob-id.outcome = 'failure'
+        if: failure() && steps.firstjob-id.outcome == 'failure'
         run: echo "hi"
