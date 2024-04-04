@@ -1,10 +1,19 @@
 name: first-workflow
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    branches:
+      - main
+      - dev
+    paths_ignore:
+      - '.github/workflows/*'
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
       - name: greet
+        id: firstjob-id
         run: |
           echo "hello!"
-          echo "hi!"
+      - name: functions
+        if: failure() && steps.firstjob-id.outcome = 'failure'
+        run: echo "hi"
