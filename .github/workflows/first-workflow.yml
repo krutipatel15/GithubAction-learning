@@ -13,7 +13,7 @@ jobs:
       - name: greet
         id: firstjob-id
         run: |
-          echo "hello!"
+          echo hello!"
       - name: functions
         if: failure() && steps.firstjob-id.outcome == 'failure'
         run: echo "hi"
